@@ -388,12 +388,13 @@
 
         <div class="venue-grid">
           <div class="venue-card" data-reveal>
-            <div class="venue-card__map" aria-hidden="true">
-              <div class="venue-card__grid"></div>
-              <span class="venue-card__pin">
+            <a class="venue-card__map" href="https://maps.google.com/?q=Mohamed+bin+Zayed+University+of+Artificial+Intelligence+Masdar+City" target="_blank" rel="noopener noreferrer" aria-label="Open MBZUAI in Google Maps (opens in a new tab)">
+              <span class="venue-card__grid" aria-hidden="true"></span>
+              <span class="venue-card__pin" aria-hidden="true">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.6 7-11.8A7 7 0 0 0 5 9.2C5 14.4 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9.2" r="2.4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
               </span>
-            </div>
+              <span class="venue-card__map-label">Open in Google Maps <span aria-hidden="true">↗</span></span>
+            </a>
             <div class="venue-card__body">
               <h3>MBZUAI — Masdar City</h3>
               <p class="venue-card__address">
@@ -442,8 +443,14 @@
             </p>
           </div>
           <div class="register__actions">
-            <a class="btn btn--solid" href="mailto:ai.nexus@mbzuai.ac.ae?subject=Stats%20Foundations%20of%20AI%202027%20%E2%80%94%20registration%20interest">
-              Email the organizers
+            <button class="btn btn--solid js-copy-contact" type="button"
+                    data-email="ai.nexus@mbzuai.ac.ae"
+                    data-label="Copy contact email"
+                    data-copied-label="Copied ✓">
+              Copy contact email
+            </button>
+            <a class="btn btn--line" href="mailto:ai.nexus@mbzuai.ac.ae?subject=Stats%20Foundations%20of%20AI%202027%20%E2%80%94%20registration%20interest">
+              Open mail app
             </a>
             <a class="btn btn--line" href="https://ai-nexus.mbzuai.ac.ae/" target="_blank" rel="noopener noreferrer">
               MBZUAI Nexus <span aria-hidden="true">↗</span>
@@ -455,6 +462,7 @@
                 <span class="copy-email__hint" aria-live="polite">Copy</span>
               </button>
             </p>
+            <p class="copy-status" role="status" aria-live="polite"></p>
           </div>
         </div>
       </div>

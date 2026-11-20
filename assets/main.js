@@ -144,45 +144,90 @@
   }
 
   /* ---------------------------------------------------------------------
-     Copy email button
+     Copy email buttons (works even when no mail app is configured)
      --------------------------------------------------------------------- */
-  var copyButton = document.querySelector(".copy-email");
+  var copyStatus = document.querySelector(".copy-status");
 
+  function announceCopy(message) {
+    if (!copyStatus) return;
+    copyStatus.textContent = message;
+    window.clearTimeout(announceCopy.timer);
+    announceCopy.timer = window.setTimeout(function () {
+      copyStatus.textContent = "";
+    }, 4500);
+  }
+
+  function legacyCopy(text) {
+    var textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "absolute";
+    textarea.style.left = "-9999px";
+    document.body.appendChild(textarea);
+    textarea.select();
+    var ok = false;
+    try {
+      ok = document.execCommand("copy");
+    } catch (error) {
+      ok = false;
+    } finally {
+      document.body.removeChild(textarea);
+    }
+    return ok;
+  }
+
+  function copyText(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard.writeText(text).catch(function () {
+        if (legacyCopy(text)) return;
+        throw new Error("copy failed");
+      });
+    }
+    if (legacyCopy(text)) return Promise.resolve();
+    return Promise.reject(new Error("copy failed"));
+  }
+
+  function onCopyFailure(email) {
+    announceCopy("Could not copy automatically — the address is " + email);
+  }
+
+  var copyButton = document.querySelector(".copy-email");
   if (copyButton) {
     var hint = copyButton.querySelector(".copy-email__hint");
-    var email = copyButton.getAttribute("data-email") || "";
     var defaultHint = hint ? hint.textContent : "Copy";
-
-    function flashHint(text) {
-      if (!hint) return;
-      hint.textContent = text;
-      window.setTimeout(function () { hint.textContent = defaultHint; }, 1800);
-    }
-
+    var flashTimer = null;
     copyButton.addEventListener("click", function () {
-      var done = function () { flashHint("Copied"); };
-      var failed = function () { flashHint(email); };
-
-      if (navigator.clipboard && window.isSecureContext) {
-        navigator.clipboard.writeText(email).then(done, failed);
-      } else {
-        var textarea = document.createElement("textarea");
-        textarea.value = email;
-        textarea.setAttribute("readonly", "");
-        textarea.style.position = "absolute";
-        textarea.style.left = "-9999px";
-        document.body.appendChild(textarea);
-        textarea.select();
-        try {
-          document.execCommand("copy");
-          done();
-        } catch (error) {
-          failed();
+      var email = copyButton.getAttribute("data-email") || "";
+      copyText(email).then(function () {
+        if (hint) {
+          hint.textContent = "Copied";
+          window.clearTimeout(flashTimer);
+          flashTimer = window.setTimeout(function () { hint.textContent = defaultHint; }, 1800);
         }
-        document.body.removeChild(textarea);
-      }
+      }, function () { onCopyFailure(email); });
     });
   }
+
+  var contactButtons = document.querySelectorAll(".js-copy-contact");
+  Array.prototype.forEach.call(contactButtons, function (button) {
+    var label = button.getAttribute("data-label") || button.textContent;
+    var copiedLabel = button.getAttribute("data-copied-label") || "Copied ✓";
+    var email = button.getAttribute("data-email") || "";
+    var timer = null;
+
+    button.addEventListener("click", function () {
+      copyText(email).then(function () {
+        button.textContent = copiedLabel;
+        button.classList.add("is-copied");
+        announceCopy("Email copied — paste it into your mail app, or use “Open mail app”.");
+        window.clearTimeout(timer);
+        timer = window.setTimeout(function () {
+          button.textContent = label;
+          button.classList.remove("is-copied");
+        }, 3200);
+      }, function () { onCopyFailure(email); });
+    });
+  });
 
   /* ---------------------------------------------------------------------
      Footer year

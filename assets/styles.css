@@ -360,6 +360,11 @@ button { font: inherit; }
   transform: translateY(-2px);
 }
 
+.btn--solid.is-copied {
+  background: var(--teal);
+  color: var(--paper);
+}
+
 .btn--line {
   border: 1px solid rgba(247, 243, 234, 0.42);
   color: var(--paper);
@@ -762,7 +767,10 @@ button { font: inherit; }
 
 .venue-card__map {
   position: relative;
+  display: block;
   height: 240px;
+  color: inherit;
+  text-decoration: none;
   background:
     radial-gradient(120% 120% at 20% 10%, rgba(47, 126, 122, 0.55), transparent 60%),
     linear-gradient(150deg, #0c262d, #0a1a20 70%);
@@ -803,6 +811,38 @@ button { font: inherit; }
 }
 
 .venue-card__pin svg { width: 26px; height: 26px; }
+
+.venue-card__map:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: -4px;
+}
+
+.venue-card__map-label {
+  position: absolute;
+  left: 20px;
+  bottom: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(247, 243, 234, 0.28);
+  background: rgba(8, 20, 26, 0.72);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  color: var(--paper);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.venue-card__map:hover .venue-card__map-label,
+.venue-card__map:focus-visible .venue-card__map-label {
+  border-color: var(--amber);
+  color: var(--amber-soft);
+}
 
 .venue-card__body { padding: 26px 28px 30px; }
 
@@ -918,6 +958,14 @@ button { font: inherit; }
 
 .copy-email:hover { border-bottom-color: var(--paper); }
 
+.copy-status {
+  flex-basis: 100%;
+  margin: 2px 0 0;
+  font-size: 12.5px;
+  color: var(--amber-soft);
+  min-height: 1em;
+}
+
 .copy-email__hint {
   font-size: 10.5px;
   letter-spacing: 0.14em;
@@ -932,25 +980,28 @@ button { font: inherit; }
 .faq details { border-bottom: 1px solid var(--line); }
 
 .faq summary {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 24px;
-  padding: 21px 0;
+  position: relative;
+  display: block;
+  padding: 21px 44px 21px 0;
   font-family: var(--serif);
   font-size: clamp(17px, 2vw, 20px);
+  line-height: 1.35;
   cursor: pointer;
   list-style: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .faq summary::-webkit-details-marker { display: none; }
 
 .faq summary::after {
   content: "+";
-  flex: none;
+  position: absolute;
+  right: 2px;
+  top: 19px;
   font-family: var(--sans);
   font-size: 20px;
   font-weight: 300;
+  line-height: 1;
   color: var(--amber-ink);
   transition: transform 0.2s ease;
 }

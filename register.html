@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Register your interest · Statistical Foundations of AI · MBZUAI 2027</title>
+  <meta name="description" content="Register your interest to attend the Statistical Foundations of AI workshop at MBZUAI, January 6–8, 2027. Tell us who you are, your homepage or Google Scholar profile, and representative works.">
+  <meta name="theme-color" content="#08141a">
+  <link rel="canonical" href="https://sfai-2027.vercel.app/register.html">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="page-register">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header site-header--solid">
+    <div class="shell header-inner">
+      <a class="brand" href="index.html" aria-label="Statistical Foundations of AI — home">
+        <svg class="brand__mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+          <rect x="2" y="2" width="44" height="44" rx="11" fill="none" stroke="currentColor" stroke-opacity=".38" stroke-width="1.5"/>
+          <text x="24" y="33.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="27" font-weight="700" fill="currentColor">Σ</text>
+        </svg>
+        <span class="brand__text">
+          <span class="brand__title">Statistical Foundations of AI</span>
+          <span class="brand__sub">MBZUAI Workshop · 2027</span>
+        </span>
+      </a>
+
+      <nav class="nav nav--simple" aria-label="Registration navigation">
+        <a href="index.html">Back to workshop</a>
+        <a class="nav__cta" href="index.html#speakers">Speakers</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="reg-hero">
+      <div class="shell">
+        <p class="eyebrow eyebrow--light">Registration</p>
+        <h1 class="reg-hero__title">Register your interest.</h1>
+        <p class="reg-hero__lede">
+          Statistical Foundations of AI · January 6–8, 2027 · MBZUAI, Abu Dhabi.
+          Attendance is by invitation and capacity is limited, so tell us a little about yourself and your work.
+        </p>
+        <p class="reg-status" id="reg-status" role="status" aria-live="polite">Registration is open.</p>
+      </div>
+    </section>
+
+    <section class="section reg-section">
+      <div class="shell reg-layout">
+        <div class="reg-card">
+          <form id="registration-form"
+                action="https://formsubmit.co/Qiang.Sun@mbzuai.ac.ae"
+                method="POST"
+                accept-charset="UTF-8"
+                data-deadline="">
+            <!-- FormSubmit configuration -->
+            <input type="hidden" name="_subject" id="reg-subject" value="SF-AI 2027 — registration interest">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="https://sfai-2027.vercel.app/thanks.html">
+            <input type="hidden" name="_cc" value="ai.nexus@mbzuai.ac.ae">
+            <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+            <div class="field">
+              <label for="reg-name">Name <span class="req" aria-hidden="true">*</span></label>
+              <input id="reg-name" name="name" type="text" autocomplete="name" required placeholder="Your full name">
+            </div>
+
+            <div class="field">
+              <label for="reg-email">Email <span class="req" aria-hidden="true">*</span></label>
+              <input id="reg-email" name="email" type="email" autocomplete="email" required placeholder="you@university.edu">
+            </div>
+
+            <div class="field">
+              <label for="reg-affiliation">Affiliation</label>
+              <input id="reg-affiliation" name="affiliation" type="text" autocomplete="organization" placeholder="University / institution / company">
+            </div>
+
+            <div class="field">
+              <label for="reg-website">Google Scholar or personal website</label>
+              <input id="reg-website" name="website" type="url" inputmode="url" placeholder="https://scholar.google.com/... or https://your-site.com">
+              <p class="field__hint">A link where we can learn more about your research.</p>
+            </div>
+
+            <div class="field">
+              <label for="reg-works">Representative works <span class="req" aria-hidden="true">*</span></label>
+              <textarea id="reg-works" name="representative_works" rows="5" required placeholder="2–3 papers, talks, or projects most relevant to the workshop (titles, venues, links)."></textarea>
+            </div>
+
+            <div class="field field--check">
+              <label class="check">
+                <input type="checkbox" name="poster_interest" value="Yes">
+                <span>I would be interested in presenting a poster.</span>
+              </label>
+            </div>
+
+            <div class="field">
+              <label for="reg-notes">Anything else we should know? (optional)</label>
+              <textarea id="reg-notes" name="notes" rows="3" placeholder="Travel constraints, visa questions, dietary requirements, etc."></textarea>
+            </div>
+
+            <p class="form-note">
+              <span class="req" aria-hidden="true">*</span> Required. Your details are shared only with the workshop organizing committee.
+            </p>
+
+            <button class="btn btn--solid reg-submit" type="submit">Submit registration</button>
+            <p class="form-fallback">
+              Trouble submitting? Email
+              <a href="mailto:Qiang.Sun@mbzuai.ac.ae?subject=Stats%20Foundations%20of%20AI%202027%20%E2%80%94%20registration">Qiang.Sun@mbzuai.ac.ae</a>
+              or <a href="mailto:ai.nexus@mbzuai.ac.ae">ai.nexus@mbzuai.ac.ae</a>.
+            </p>
+          </form>
+
+          <div class="reg-closed" id="reg-closed" hidden>
+            <h2>Registration is closed.</h2>
+            <p>The registration deadline for this workshop has passed. If you still need to get in touch, email
+              <a href="mailto:Qiang.Sun@mbzuai.ac.ae">Qiang.Sun@mbzuai.ac.ae</a> or
+              <a href="mailto:ai.nexus@mbzuai.ac.ae">ai.nexus@mbzuai.ac.ae</a>.</p>
+          </div>
+        </div>
+
+        <aside class="reg-aside" aria-label="Registration information">
+          <div class="reg-aside__item">
+            <h2>Who should register</h2>
+            <p>Researchers interested in attending, poster presenters, and guests from academia and industry. Invited speakers do not need to register again.</p>
+          </div>
+          <div class="reg-aside__item">
+            <h2>What happens next</h2>
+            <p>The organizing team will review submissions and follow up by email. Submitting this form expresses interest; it does not guarantee a place.</p>
+          </div>
+          <div class="reg-aside__item">
+            <h2>Contact</h2>
+            <p>If the form does not work, email <a href="mailto:ai.nexus@mbzuai.ac.ae">ai.nexus@mbzuai.ac.ae</a> with the subject “Stats Foundations of AI 2027”.</p>
+            <button class="copy-email" type="button" data-email="ai.nexus@mbzuai.ac.ae">
+              <span class="copy-email__text">ai.nexus@mbzuai.ac.ae</span>
+              <span class="copy-email__hint" aria-live="polite">Copy</span>
+            </button>
+            <p class="copy-status" role="status" aria-live="polite"></p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer reg-footer">
+    <div class="shell reg-footer__inner">
+      <p>Statistical Foundations of AI · MBZUAI Workshop · January 6–8, 2027</p>
+      <p><a href="index.html">Workshop home</a> · <a href="mailto:ai.nexus@mbzuai.ac.ae">ai.nexus@mbzuai.ac.ae</a></p>
+    </div>
+  </footer>
+
+  <script src="assets/main.js" defer></script>
+  <script src="assets/register.js" defer></script>
+</body>
+</html>

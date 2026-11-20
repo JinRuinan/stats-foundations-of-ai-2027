@@ -2,7 +2,7 @@
 
 Workshop website, published with GitHub Pages:
 
-**https://jinruinan.github.io/stats-foundations-of-ai-2027/**
+**https://sfai-2027.vercel.app/**
 
 - Event: Statistical Foundations of AI, MBZUAI (Masdar City, Abu Dhabi), January 6–8, 2027
 - Chair: Prof. Qiang Sun

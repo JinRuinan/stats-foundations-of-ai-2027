@@ -11,7 +11,7 @@
   --sand: #e6dbc5;
   --amber: #d9a441;
   --amber-soft: #e9c27a;
-  --amber-ink: #8a6420;
+  --amber-ink: #7a5618;
   --teal: #2f7e7a;
   --muted: #5d6b6e;
   --muted-light: rgba(247, 243, 234, 0.64);
@@ -869,6 +869,8 @@ button { font: inherit; }
   height: 3px;
   background: linear-gradient(90deg, var(--amber), rgba(217, 164, 65, 0.1));
 }
+
+.register .eyebrow { color: var(--amber-soft); }
 
 .register h2 {
   font-size: clamp(1.8rem, 3.6vw, 2.8rem);

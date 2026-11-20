@@ -1,6 +1,6 @@
 # Statistical Foundations of AI — MBZUAI Workshop (January 6–8, 2027)
 
-Workshop website, published with GitHub Pages:
+Workshop website, published with Vercel:
 
 **https://sfai-2027.vercel.app/**
 

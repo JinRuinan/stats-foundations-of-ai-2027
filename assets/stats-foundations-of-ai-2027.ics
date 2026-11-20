@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//MBZUAI//Statistical Foundations of AI 2027//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Statistical Foundations of AI (MBZUAI, 2027)
+BEGIN:VEVENT
+UID:statistical-foundations-of-ai-2027@mbzuai.ac.ae
+DTSTAMP:20261120T120000Z
+DTSTART:20270106T050000Z
+DTEND:20270108T110000Z
+SUMMARY:Statistical Foundations of AI — MBZUAI Workshop
+LOCATION:Executive Theatre, Knowledge Center, MBZUAI, Masdar City, Abu Dhabi, UAE
+DESCRIPTION:An invitational three-day workshop on the statistical foundations of modern AI (January 6-8, 2027). Program and registration details: contact the organizing team at ai.nexus@mbzuai.ac.ae.
+URL:https://ai-nexus.mbzuai.ac.ae/
+END:VEVENT
+END:VCALENDAR

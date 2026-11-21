@@ -1515,6 +1515,175 @@ a.chip { text-decoration: none; }
 .thanks__actions { margin-top: 28px; }
 
 /* --------------------------------------------------------------------------
+   People cards: avatars + hover profiles
+   -------------------------------------------------------------------------- */
+
+.speaker {
+  position: relative;
+  color: inherit;
+  text-decoration: none;
+}
+
+.speaker:hover,
+.speaker:focus-visible {
+  transform: translateY(-3px);
+  background: #fff;
+  border-color: rgba(122, 86, 24, 0.28);
+  box-shadow: 0 18px 40px -22px rgba(8, 20, 26, 0.35);
+}
+
+.speaker__avatar,
+.organizer__avatar {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+}
+
+.avatar-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+.avatar-img.is-error { display: none; }
+
+.speaker__initials,
+.organizer__initials {
+  font-family: var(--serif);
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+}
+
+.speaker__body { flex: 1; min-width: 0; }
+
+.speaker__go {
+  margin-left: auto;
+  align-self: flex-start;
+  font-size: 13px;
+  line-height: 1;
+  color: var(--amber-ink);
+  opacity: 0.55;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.speaker:hover .speaker__go,
+.speaker:focus-visible .speaker__go {
+  opacity: 1;
+  transform: translate(1px, -1px);
+}
+
+.organizers li {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.organizer__body { min-width: 0; }
+
+.person-popover {
+  position: fixed;
+  z-index: 300;
+  width: min(360px, calc(100vw - 24px));
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 0 24px 60px -24px rgba(8, 20, 26, 0.55);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.16s ease, transform 0.16s ease;
+  pointer-events: auto;
+}
+
+.person-popover[hidden] { display: none; }
+
+.person-popover.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.person-popover__head {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.person-popover__avatar {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  flex: none;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+}
+
+.person-popover__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+.person-popover__meta {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+
+.person-popover__name {
+  font-family: var(--serif);
+  font-size: 20px;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.person-popover__affiliation {
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.35;
+}
+
+.person-popover__bio {
+  margin: 0 0 12px;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--ink);
+  opacity: 0.82;
+}
+
+.person-popover__link {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--amber-ink);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(122, 86, 24, 0.35);
+  padding-bottom: 1px;
+}
+
+.person-popover__link:hover { border-bottom-color: var(--amber-ink); }
+
+@media (max-width: 520px) {
+  .speaker__avatar,
+  .organizer__avatar { width: 48px; height: 48px; }
+  .person-popover__avatar { width: 48px; height: 48px; }
+}
+
+/* --------------------------------------------------------------------------
    Motion & print
    -------------------------------------------------------------------------- */
 

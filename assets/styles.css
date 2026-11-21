@@ -1864,6 +1864,11 @@ a.chip { text-decoration: none; }
   flex: 1;
 }
 
+/* Keep the external-link arrow attached to organizer names. */
+.organizer-link {
+  white-space: nowrap;
+}
+
 /* --------------------------------------------------------------------------
    Motion & print
    -------------------------------------------------------------------------- */

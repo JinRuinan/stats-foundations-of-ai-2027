@@ -1820,6 +1820,51 @@ a.chip { text-decoration: none; }
 }
 
 /* --------------------------------------------------------------------------
+   Equal-height card grids (speakers / topics / program days / organizers)
+   -------------------------------------------------------------------------- */
+
+.speakers,
+.topics,
+.days,
+.organizers {
+  grid-auto-rows: 1fr;
+  align-items: stretch;
+}
+
+.speakers > li {
+  display: flex;
+  min-width: 0;
+}
+
+.speaker {
+  width: 100%;
+  height: 100%;
+}
+
+.topic,
+.day,
+.organizers li {
+  height: 100%;
+}
+
+.topic {
+  display: flex;
+}
+
+.topic__card {
+  flex: 1;
+}
+
+.day {
+  display: flex;
+  flex-direction: column;
+}
+
+.day__list {
+  flex: 1;
+}
+
+/* --------------------------------------------------------------------------
    Motion & print
    -------------------------------------------------------------------------- */
 

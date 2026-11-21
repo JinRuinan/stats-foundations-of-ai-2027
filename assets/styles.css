@@ -610,12 +610,6 @@ a.chip { text-decoration: none; }
   pointer-events: none;
 }
 
-.topic--2 { --topic-accent: #2f7e7a; --topic-tint: rgba(47, 126, 122, 0.16); }
-.topic--3 { --topic-accent: #41607a; --topic-tint: rgba(65, 96, 122, 0.15); }
-.topic--4 { --topic-accent: #7a4c5c; --topic-tint: rgba(122, 76, 92, 0.15); }
-.topic--5 { --topic-accent: #6f7a3f; --topic-tint: rgba(111, 122, 63, 0.17); }
-.topic--6 { --topic-accent: #a85a3a; --topic-tint: rgba(168, 90, 58, 0.15); }
-
 .topic__card {
   position: relative;
   z-index: 1;

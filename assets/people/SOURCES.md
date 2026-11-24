@@ -24,3 +24,5 @@ to initials.
 | haiyan-huang.jpg | Google Scholar profile photo |
 | mladen-kolar.jpg | Google Scholar profile photo |
 | xinwei-shen.jpg | Google Scholar profile photo |
+| yue-lu.jpg | https://lu.seas.harvard.edu/files/2025/08/044324_yue_lu_09-2048x1366_1.jpg |
+| cengiz-pehlevan.jpg | Harvard SEAS faculty headshot |

@@ -85,15 +85,30 @@
             </div>
 
             <div class="field">
-              <label for="reg-works">Representative works <span class="req" aria-hidden="true">*</span></label>
-              <textarea id="reg-works" name="representative_works" rows="5" required placeholder="2–3 papers, talks, or projects most relevant to the workshop (titles, venues, links)."></textarea>
+              <label for="reg-works">Representative works (optional)</label>
+              <textarea id="reg-works" name="representative_works" rows="5" placeholder="2–3 papers, talks, or projects most relevant to the workshop (titles, venues, links)."></textarea>
+              <p class="field__hint">Optional — but it helps us understand your work.</p>
             </div>
 
-            <div class="field field--check">
-              <label class="check">
-                <input type="checkbox" name="poster_interest" value="Yes">
-                <span>I would be interested in presenting a poster.</span>
-              </label>
+            <fieldset class="field field--choice">
+              <legend>Would you like to present a poster?</legend>
+              <div class="choice-set">
+                <label class="choice">
+                  <input type="radio" name="poster" value="Yes">
+                  <span>Yes — I would like to present a poster</span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="poster" value="No">
+                  <span>No — not at this time</span>
+                </label>
+              </div>
+              <p class="field__hint">Poster format and submission details will be shared by email after registration.</p>
+            </fieldset>
+
+            <div class="field poster-title-field" id="poster-title-field" hidden>
+              <label for="reg-poster-title">Poster title <span class="req" aria-hidden="true">*</span></label>
+              <input id="reg-poster-title" name="poster_title" type="text" placeholder="Working title of your poster" disabled>
+              <p class="field__hint">You can refine the title later.</p>
             </div>
 
             <div class="field">

@@ -1521,6 +1521,50 @@ a.chip { text-decoration: none; }
 
 .field__hint { font-size: 12.5px; color: var(--muted); }
 
+.field--choice {
+  border: 0;
+  padding: 0;
+  margin: 0 0 18px;
+}
+
+.field--choice legend {
+  padding: 0;
+  margin-bottom: 7px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+}
+
+.choice-set { display: grid; gap: 8px; }
+
+.choice {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.choice input[type="radio"] {
+  width: auto;
+  margin: 3px 0 0;
+  accent-color: var(--amber-ink);
+}
+
+.poster-title-field[hidden] { display: none; }
+
+.poster-title-field:not([hidden]) {
+  animation: poster-title-reveal 0.2s ease;
+}
+
+@keyframes poster-title-reveal {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: none; }
+}
+
 .field--check { margin: 4px 0 18px; }
 
 .check {

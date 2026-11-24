@@ -50,6 +50,25 @@
   // Exposed so deadline behaviour can be tested without changing the page.
   window.__applyRegistrationDeadline = applyDeadline;
 
+  // Show the poster-title field only when the applicant chooses to present a poster.
+  var posterRadios = form.querySelectorAll('input[name="poster"]');
+  var posterTitleField = document.getElementById("poster-title-field");
+  var posterTitleInput = document.getElementById("reg-poster-title");
+
+  function syncPosterTitle() {
+    if (!posterRadios.length || !posterTitleField || !posterTitleInput) return;
+    var selected = form.querySelector('input[name="poster"]:checked');
+    var show = !!selected && selected.value === "Yes";
+    posterTitleField.hidden = !show;
+    posterTitleInput.disabled = !show;
+    posterTitleInput.required = show;
+  }
+
+  Array.prototype.forEach.call(posterRadios, function (radio) {
+    radio.addEventListener("change", syncPosterTitle);
+  });
+  syncPosterTitle();
+
   form.addEventListener("submit", function () {
     var subject = document.getElementById("reg-subject");
     var name = document.getElementById("reg-name");

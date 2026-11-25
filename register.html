@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Register your interest · Statistical Foundations of AI · MBZUAI 2027</title>
-  <meta name="description" content="Register your interest to attend the Statistical Foundations of AI workshop at MBZUAI, January 6–8, 2027. Tell us who you are, your homepage or Google Scholar profile, and representative works.">
+  <meta name="description" content="Register your interest to attend the Statistical Foundations of AI workshop at MBZUAI, January 6–8, 2027. Registration is handled through Microsoft Forms.">
   <meta name="theme-color" content="#08141a">
   <link rel="canonical" href="https://sfai-2027.vercel.app/register.html">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -41,7 +41,8 @@
         <h1 class="reg-hero__title">Register your interest.</h1>
         <p class="reg-hero__lede">
           Statistical Foundations of AI · January 6–8, 2027 · MBZUAI, Abu Dhabi.
-          Attendance is by invitation and capacity is limited, so tell us a little about yourself and your work. Registration closes on <strong>6 December 2026</strong> (23:59 Gulf time).
+          Attendance is by invitation and capacity is limited. Registration is handled through
+          Microsoft Forms and closes on <strong>6 December 2026</strong> (23:59 Gulf time).
         </p>
         <p class="reg-status" id="reg-status" role="status" aria-live="polite">Registration is open.</p>
       </div>
@@ -50,83 +51,25 @@
     <section class="section reg-section">
       <div class="shell reg-layout">
         <div class="reg-card">
-          <form id="registration-form"
-                action="https://formsubmit.co/Qiang.Sun@mbzuai.ac.ae"
-                method="POST"
-                accept-charset="UTF-8"
-                data-deadline="2026-12-06T23:59:59+04:00">
-            <!-- FormSubmit configuration -->
-            <input type="hidden" name="_subject" id="reg-subject" value="SF-AI 2027 — registration interest">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_next" value="https://sfai-2027.vercel.app/thanks.html">
-            <input type="hidden" name="_cc" value="ai.nexus@mbzuai.ac.ae,ruinan.jin@mbzuai.ac.ae,dali.liu@mbzuai.ac.ae">
-            <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-
-            <div class="field">
-              <label for="reg-name">Name <span class="req" aria-hidden="true">*</span></label>
-              <input id="reg-name" name="name" type="text" autocomplete="name" required placeholder="Your full name">
-            </div>
-
-            <div class="field">
-              <label for="reg-email">Email <span class="req" aria-hidden="true">*</span></label>
-              <input id="reg-email" name="email" type="email" autocomplete="email" required placeholder="you@university.edu">
-            </div>
-
-            <div class="field">
-              <label for="reg-affiliation">Affiliation</label>
-              <input id="reg-affiliation" name="affiliation" type="text" autocomplete="organization" placeholder="University / institution / company">
-            </div>
-
-            <div class="field">
-              <label for="reg-website">Google Scholar or personal website</label>
-              <input id="reg-website" name="website" type="url" inputmode="url" placeholder="https://scholar.google.com/... or https://your-site.com">
-              <p class="field__hint">A link where we can learn more about your research.</p>
-            </div>
-
-            <div class="field">
-              <label for="reg-works">Representative works (optional)</label>
-              <textarea id="reg-works" name="representative_works" rows="5" placeholder="2–3 papers, talks, or projects most relevant to the workshop (titles, venues, links)."></textarea>
-              <p class="field__hint">Optional — but it helps us understand your work.</p>
-            </div>
-
-            <fieldset class="field field--choice">
-              <legend>Would you like to present a poster?</legend>
-              <div class="choice-set">
-                <label class="choice">
-                  <input type="radio" name="poster" value="Yes">
-                  <span>Yes — I would like to present a poster</span>
-                </label>
-                <label class="choice">
-                  <input type="radio" name="poster" value="No">
-                  <span>No — not at this time</span>
-                </label>
-              </div>
-              <p class="field__hint">Poster format and submission details will be shared by email after registration.</p>
-            </fieldset>
-
-            <div class="field poster-title-field" id="poster-title-field" hidden>
-              <label for="reg-poster-title">Poster title <span class="req" aria-hidden="true">*</span></label>
-              <input id="reg-poster-title" name="poster_title" type="text" placeholder="Working title of your poster" disabled>
-              <p class="field__hint">You can refine the title later.</p>
-            </div>
-
-            <div class="field">
-              <label for="reg-notes">Anything else we should know? (optional)</label>
-              <textarea id="reg-notes" name="notes" rows="3" placeholder="Travel constraints, visa questions, dietary requirements, etc."></textarea>
-            </div>
-
-            <p class="form-note">
-              <span class="req" aria-hidden="true">*</span> Required. Your details are shared only with the workshop organizing committee.
+          <div id="reg-open">
+            <h2 class="reg-card__title">Register via Microsoft Forms</h2>
+            <p class="reg-card__lede">
+              The registration form is hosted by Microsoft Forms. It opens in a new tab; your
+              answers go directly to the workshop organizers and are collected in their Excel
+              response workbook.
             </p>
-
-            <button class="btn btn--solid reg-submit" type="submit">Submit registration</button>
+            <a class="btn btn--solid reg-submit"
+               id="reg-link"
+               href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=03IyyQcbPUujthmzSpc5FcSINLVxRylGv4W7kM42NJNUNzdMWFlVOURRTUM1SVdKMUZOOEpFMjdQTS4u"
+               target="_blank" rel="noopener noreferrer">
+              Open registration form <span aria-hidden="true">↗</span>
+            </a>
             <p class="form-fallback">
-              Trouble submitting? Email
+              Trouble opening the form? Email
               <a href="mailto:Qiang.Sun@mbzuai.ac.ae?subject=Stats%20Foundations%20of%20AI%202027%20%E2%80%94%20registration">Qiang.Sun@mbzuai.ac.ae</a>
               or <a href="mailto:ai.nexus@mbzuai.ac.ae">ai.nexus@mbzuai.ac.ae</a>.
             </p>
-          </form>
+          </div>
 
           <div class="reg-closed" id="reg-closed" hidden>
             <h2>Registration is closed.</h2>
@@ -138,12 +81,16 @@
 
         <aside class="reg-aside" aria-label="Registration information">
           <div class="reg-aside__item">
+            <h2>What you will need</h2>
+            <p>Your name and email, your affiliation, a homepage or Google Scholar profile, and optionally 2–3 representative works. You can also tell us whether you would like to present a poster and, if so, a working poster title.</p>
+          </div>
+          <div class="reg-aside__item">
             <h2>Who should register</h2>
             <p>Researchers interested in attending, poster presenters, and guests from academia and industry. Invited speakers do not need to register again.</p>
           </div>
           <div class="reg-aside__item">
             <h2>What happens next</h2>
-            <p>The organizing team will review submissions and follow up by email. Submitting this form expresses interest; it does not guarantee a place.</p>
+            <p>The organizing team will review responses and follow up by email. Submitting the form expresses interest; it does not guarantee a place.</p>
           </div>
           <div class="reg-aside__item">
             <h2>Contact</h2>
@@ -167,6 +114,39 @@
   </footer>
 
   <script src="assets/main.js" defer></script>
-  <script src="assets/register.js" defer></script>
+  <script>
+    (function () {
+      "use strict";
+      var defaultDeadline = "2026-12-06T23:59:59+04:00";
+      var status = document.getElementById("reg-status");
+      var open = document.getElementById("reg-open");
+      var closed = document.getElementById("reg-closed");
+
+      function formatDate(date) {
+        try {
+          return date.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+        } catch (error) {
+          return "6 December 2026";
+        }
+      }
+
+      function applyDeadline() {
+        var raw = document.body.getAttribute("data-deadline") || defaultDeadline;
+        var deadline = new Date(raw);
+        var isClosed = !isNaN(deadline.getTime()) && new Date().getTime() > deadline.getTime();
+        if (status) {
+          status.textContent = isClosed
+            ? "Registration closed on " + formatDate(deadline) + "."
+            : "Registration is open until " + formatDate(deadline) + ".";
+          status.classList.toggle("reg-status--closed", isClosed);
+        }
+        if (open) open.hidden = isClosed;
+        if (closed) closed.hidden = !isClosed;
+      }
+
+      applyDeadline();
+      window.__applyRegistrationDeadline = applyDeadline;
+    })();
+  </script>
 </body>
 </html>

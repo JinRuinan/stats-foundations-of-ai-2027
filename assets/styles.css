@@ -1592,6 +1592,18 @@ a.chip { text-decoration: none; }
   color: var(--muted);
 }
 
+.reg-card__title {
+  margin-bottom: 12px;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.reg-card__lede {
+  margin-bottom: 22px;
+  max-width: 52ch;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
 .reg-submit { width: 100%; justify-content: center; }
 
 .form-fallback {
